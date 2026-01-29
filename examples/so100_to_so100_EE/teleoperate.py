@@ -23,13 +23,13 @@ from lerobot.processor.converters import (
     robot_action_to_transition,
     transition_to_robot_action,
 )
-from lerobot.robots.so_follower import SO100Follower, SO100FollowerConfig
-from lerobot.robots.so_follower.robot_kinematic_processor import (
+from lerobot.robots.so101_follower import SO101Follower, SO101FollowerConfig
+from lerobot.robots.so101_follower.robot_kinematic_processor import (
     EEBoundsAndSafety,
     ForwardKinematicsJointsToEE,
     InverseKinematicsEEToJoints,
 )
-from lerobot.teleoperators.so_leader import SO100Leader, SO100LeaderConfig
+from lerobot.teleoperators.so101_leader import SO100Leader, SO100LeaderConfig
 from lerobot.utils.robot_utils import precise_sleep
 from lerobot.utils.visualization_utils import init_rerun, log_rerun_data
 
