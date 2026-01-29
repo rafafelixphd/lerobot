@@ -1,0 +1,12 @@
+# configs/robot/my_custom_arm.yaml
+leader_arms:
+  main:
+    _target_: lerobot.common.robot_devices.motors.DynamixelMotorsBus
+    port: /dev/tty.usbmodem5AA90240081
+    baudrate: 1000000
+
+follower_arms:
+  main:
+    _target_: lerobot.common.robot_devices.motors.DynamixelMotorsBus
+    port: /dev/tty.usbmodem5AAF2631481
+    baudrate: 1000000

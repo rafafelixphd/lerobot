@@ -35,13 +35,23 @@ from lerobot.utils.visualization_utils import init_rerun, log_rerun_data
 
 FPS = 30
 
+import os
+
+leader_specs = {
+    "id": os.environ.get("LEADER_ID", "so-arm-101-002"), 
+    "port": os.environ.get("LEADER_PORT", "/dev/tty.usbmodem5AAF2631481")
+}
+follower_specs = {
+    "id": os.environ.get("LEADER_ID", "so-arm-101-002"), 
+    "port": os.environ.get("LEADER_PORT", "/dev/tty.usbmodem5AA90240081")
+}
 
 def main():
     # Initialize the robot and teleoperator config
     follower_config = SO100FollowerConfig(
-        port="/dev/tty.usbmodem5A460814411", id="my_awesome_follower_arm", use_degrees=True
+        **follower_steps, use_degrees=True
     )
-    leader_config = SO100LeaderConfig(port="/dev/tty.usbmodem5A460819811", id="my_awesome_leader_arm")
+    leader_config = SO100LeaderConfig(**leader_steps)#(port="/dev/tty.usbmodem5A460819811", id="my_awesome_leader_arm")
 
     # Initialize the robot and teleoperator
     follower = SO100Follower(follower_config)
